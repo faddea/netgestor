@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel del Administrador</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="modo-oscuro">
+  <div class="panel">
+      <h1>📘 Panel del Docente</h1>
+    <div class="rack">
+      <!-- Las 30 netbooks -->
+      <script>
+        for (let i = 1; i <= 30; i++) {
+          document.write(`
+          <!-- En vez de usar onclick -->
+            <div class="netbook" data-id="${i}" onclick="seleccionarNetbookDocente(this)">
+              <img src="imagenes/netbook.svg" alt="Netbook ${i}">
+              <span>#${i}</span>
+            </div>
+          `);
+        }
+        
+      </script>
+    </div>
+          <button onclick="abrirModalPedido()">Enviar Pedido</button>
+
+  </div>
+
+  <!-- Modal de confirmación -->
+<div id="modalPedido" class="modal oculto">
+  <div class="modal-contenido">
+    <h2>Confirmar Retiro</h2>
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" required>
+
+    <label for="hora">Hora:</label>
+    <input type="time" id="hora" required>
+
+    <label for="persona">Retirado por:</label>
+    <input type="text" id="persona" placeholder="Nombre completo" required>
+
+    <p>🖋️ Firma no disponible digitalmente</p>
+
+    <button onclick="confirmarPedido()">Confirmar</button>
+    <button onclick="cerrarModalPedido()">Cancelar</button>
+  </div>
+</div>
+
+
+  <script src="js/app.js"></script>
+</body>
+</html>

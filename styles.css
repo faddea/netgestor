@@ -1,0 +1,275 @@
+/* Tipografía base */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Modo oscuro */
+
+
+/* Contenedor general */
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+/* Sección de presentación */
+.presentacion {
+  margin-bottom: 40px;
+}
+
+.presentacion h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.presentacion p {
+  font-size: 1.1rem;
+  color: #cccccc;
+}
+
+/* Caja de login */
+.login-box {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  width: 300px;
+}
+
+.login-box input,
+.login-box select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.login-box button,
+.presentacion button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.login-box button:hover,
+.presentacion button:hover {
+  background-color: #0056b3;
+}
+
+.oculto {
+  display: none;
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #fff;
+}
+
+.panel {
+  text-align: center;
+  padding: 30px;
+}
+
+.panel h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.rack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.netbook {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.netbook img {
+  width: 60%;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+/* Animación de borde (simula carga) */
+.netbook::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  animation: recorrerBorde 2s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes recorrerBorde {
+  0%   { border-top: 2px solid #00f; border-right: 2px solid transparent; }
+  25%  { border-right: 2px solid #00f; border-bottom: 2px solid transparent; }
+  50%  { border-bottom: 2px solid #00f; border-left: 2px solid transparent; }
+  75%  { border-left: 2px solid #00f; }
+  100% { border-top: 2px solid transparent; border-right: 2px solid transparent;
+         border-bottom: 2px solid transparent; border-left: 2px solid transparent; }
+}
+
+/* Estados especiales */
+.netbook.pedida {
+  background-color: orange;
+}
+
+.netbook.daniada {
+  background-color: crimson;
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  color: white;
+}
+
+.modal-contenido h2 {
+  margin-top: 0;
+}
+
+.modal-contenido label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.modal-contenido select,
+.modal-contenido textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2c2c2c;
+  color: white;
+}
+
+.modal-contenido button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.oculto {
+  display: none !important;
+}
+
+.netbook.seleccionada {
+  background-color: #00cc66;
+  border: 2px solid #00ff99;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background: #1f1f1f;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 320px;
+}
+
+.modal-contenido h2 {
+  margin-top: 0;
+}
+
+.modal-contenido label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.modal-contenido input {
+  width: 100%;
+  padding: 8px;
+  background: #2a2a2a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+

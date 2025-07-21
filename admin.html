@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel del Administrador</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="modo-oscuro">
+  <div class="panel">
+    <h1>🔧 Panel del Administrador</h1>
+    <div class="rack">
+      <!-- Modal -->
+<div id="modal" class="modal oculto">
+  <div class="modal-contenido">
+    <h2>Netbook <span id="modal-id"></span></h2>
+    <label for="estado">Estado:</label>
+    <select id="estado">
+      <option value="disponible">Disponible</option>
+      <option value="pedida">Pedida</option>
+      <option value="daniada">Dañada</option>
+    </select>
+    <label for="observacion">Observación:</label>
+    <textarea id="observacion" rows="3" placeholder="Escribí algo..."></textarea>
+    <button onclick="guardarCambios()">Guardar</button>
+    <button onclick="cerrarModal()">Cerrar</button>
+  </div>
+</div>
+
+      <!-- Las 30 netbooks -->
+      <script>
+        for (let i = 1; i <= 30; i++) {
+          document.write(`
+            <div class="netbook" onclick="seleccionarNetbook(this)" data-id="${i}">
+              <img src="imagenes/netbook.svg" alt="Netbook ${i}">
+              <span>#${i}</span>
+            </div>
+          `);
+        }
+      </script>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
